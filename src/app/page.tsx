@@ -153,7 +153,7 @@ const Home = () => {
                 id="explanation"
                 value={explanation}
                 readOnly
-                className="bg-muted rounded-md border-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
+                className="bg-secondary rounded-md border-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 text-lg shadow-md"
               />
             </div>
           )}
