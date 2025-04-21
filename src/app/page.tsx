@@ -153,6 +153,7 @@ const Home = () => {
                 id="explanation"
                 value={explanation}
                 readOnly
+                rows={10}
                 className="bg-secondary rounded-md border-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 text-2xl shadow-md"
               />
             </div>
@@ -165,4 +166,3 @@ const Home = () => {
 };
 
 export default Home;
-
