@@ -5,7 +5,6 @@ import {Button} from '@/components/ui/button';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {toast} from '@/hooks/use-toast';
 import {Icons} from '@/components/icons';
-import {useTheme} from 'next-themes';
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@/components/ui/select';
 import {explainCode} from '@/ai/flows/explain-code';
 import {customizeExplanation} from '@/ai/flows/customize-explanation';
@@ -17,7 +16,7 @@ const Home = () => {
   const [explanation, setExplanation] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [detailLevel, setDetailLevel] = useState('concise');
-  const {theme} = useTheme();
+  
 
   const handleExplainCode = async () => {
     setIsLoading(true);
@@ -76,7 +75,7 @@ const Home = () => {
 
   return (
     <TooltipProvider>
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black">
       <Card className="w-full max-w-2xl bg-card shadow-md rounded-lg">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold tracking-tight">Code Whisperer</CardTitle>
@@ -104,7 +103,8 @@ const Home = () => {
               placeholder="Paste your code here..."
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              className="bg-background border-input rounded-md focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
+              className="bg-background border-input rounded-md focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 text-4xl"
+              rows={12}
               disabled={isLoading}
             />
           </div>
@@ -153,8 +153,8 @@ const Home = () => {
                 id="explanation"
                 value={explanation}
                 readOnly
-                rows={10}
-                className="bg-secondary rounded-md border-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 text-2xl shadow-md"
+                rows={25}
+                className="bg-secondary rounded-md border-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 text-4xl shadow-md"
               />
             </div>
           )}

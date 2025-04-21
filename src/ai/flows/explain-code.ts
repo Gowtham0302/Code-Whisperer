@@ -1,4 +1,3 @@
-// Explain Code Flow
 'use server';
 
 /**
@@ -40,7 +39,17 @@ const prompt = ai.definePrompt({
       explanation: z.string().describe('The explanation of the code.'),
     }),
   },
-  prompt: 'You are a coding tutor. Explain the following code in a conversational manner.\\n\\nCode:\\n\\n\'\'\'\\n{{{code}}}\n\'\'\'\\n\\nExplanation Level: {{{explanationLevel}}}\\n\\nExplanation:', 
+  prompt: `You are a coding tutor. Explain the following code in a conversational manner.
+
+Code:
+
+\'\'\'
+{{{code}}}
+\'\'\'
+
+Explanation Level: {{{explanationLevel}}}
+
+Explanation:`,
 });
 
 const explainCodeFlow = ai.defineFlow<
@@ -55,3 +64,4 @@ async input => {
   const {output} = await prompt(input);
   return output!;
 });
+
